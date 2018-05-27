@@ -715,7 +715,7 @@ public interface BitcoindRpcClient {
 
     String blockHash();
 
-    int confirmations();
+    Integer confirmations();
 
     Date time();
 
