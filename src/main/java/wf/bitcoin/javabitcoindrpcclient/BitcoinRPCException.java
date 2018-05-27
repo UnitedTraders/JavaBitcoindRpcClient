@@ -41,7 +41,7 @@ public class BitcoinRPCException extends GenericRpcException {
    * @param response the error stream received
    */
   public BitcoinRPCException(String method, String params, int responseCode, String responseMessage, String response) {
-    super("RPC Query Failed (method: " + method + ", params: " + params + ", response code: " + responseCode + " responseMessage " + responseMessage + ", response: " + response);
+    super("RPC Query Failed (method: " + method + ", params: " + params + ", response code: " + responseCode + " responseMessage: " + responseMessage + ", response: " + response);
     this.rpcMethod = method;
     this.rpcParams = params;
     this.responseCode = responseCode;
@@ -85,4 +85,7 @@ public class BitcoinRPCException extends GenericRpcException {
     return responseMessage;
   }
 
+  public String getResponse() {
+    return response;
+  }
 }
