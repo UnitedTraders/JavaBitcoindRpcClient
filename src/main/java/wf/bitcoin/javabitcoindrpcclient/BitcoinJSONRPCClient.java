@@ -1,15 +1,15 @@
 /*
  * BitcoindRpcClient-JSON-RPC-Client License
- * 
+ *
  * Copyright (c) 2013, Mikhail Yevchenko.
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the
  * Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish,
  * distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject
  * to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
  * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
@@ -742,7 +742,7 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
       return m.toString();
     }
   }
-  
+
   @SuppressWarnings("serial")
   private class TxOutWrapper extends MapWrapper implements TxOut, Serializable {
 
@@ -1033,8 +1033,8 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
   }
 
   @Override
-  public int getBlockCount() throws GenericRpcException {
-    return ((Number) query("getblockcount")).intValue();
+  public Integer getBlockCount() throws GenericRpcException {
+    return query("getblockcount") == null ? null : ((Number) query("getblockcount")).intValue();
   }
 
   @Override
@@ -1842,21 +1842,21 @@ public class BitcoinJSONRPCClient implements BitcoindRpcClient {
 //        BitcoinJSONRPCClient b = new BitcoinJSONRPCClient(true);
 //
 //        System.out.println(b.listTransactions());
-//        
+//
 ////        String aa = "mjrxsupqJGBzeMjEiv57qxSKxgd3SVwZYd";
 ////        String ab = "mpN3WTJYsrnnWeoMzwTxkp8325nzArxnxN";
 ////        String ac = b.getNewAddress("TEST");
-////        
+////
 ////        System.out.println(b.getBalance("", 0));
 ////        System.out.println(b.sendFrom("", ab, 0.1));
 ////        System.out.println(b.sendToAddress(ab, 0.1, "comment", "tocomment"));
 ////        System.out.println(b.getReceivedByAddress(ab));
 ////        System.out.println(b.sendToAddress(ac, 0.01));
-////        
+////
 ////        System.out.println(b.validateAddress(ac));
-////        
+////
 //////        b.importPrivKey(b.dumpPrivKey(aa));
-////        
+////
 ////        System.out.println(b.getAddressesByAccount("TEST"));
 ////        System.out.println(b.listReceivedByAddress());
 //    }

@@ -611,7 +611,7 @@ public interface BitcoindRpcClient {
    *  
    * @see <a href="https://bitcoin.org/en/developer-reference#getblockcount">getblockcount</a>
    */
-  int getBlockCount() throws GenericRpcException;
+  Integer getBlockCount() throws GenericRpcException;
 
   /**
    * The getnewaddress RPC returns a new Bitcoin address for receiving payments. 
